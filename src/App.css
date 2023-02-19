@@ -1,0 +1,19 @@
+
+
+.sidebar {
+    background-color: #f1f1f1;
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.table {
+    height: 50%;
+    width: 320px;
+    position: fixed;
+    padding-left:200px;
+}
