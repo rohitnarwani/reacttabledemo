@@ -3,8 +3,8 @@ import './Sidebar.css';
 
 function Sidebar() {
     const [menuItems, setMenuItems] = useState([
-        { name: 'Home', link: '/' },
-        { name: 'About', link: '/about' }
+        { name: 'Dashboard', link: '/' },
+        { name: 'Feedback', link: '/about' }
     ]);
 
 
