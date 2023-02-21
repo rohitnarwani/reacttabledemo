@@ -20,7 +20,9 @@ function Table({ columns, data }) {
     return (
         <table {...getTableProps()} style={{
             height: '80%',
-            width:'80%'
+            width: '80%',
+            borderCollapse: 'collapse',
+            border: 'none',
         }}>
             <thead>
                 <tr>
@@ -62,12 +64,13 @@ function Table({ columns, data }) {
                 {rows.map(row => {
                     prepareRow(row);
                     return (
-                        <tr {...row.getRowProps()}>
+                        <tr {...row.getRowProps()} style={{ border: 'solid 1px gray'}}>
                             {row.cells.map(cell => {
                                 return <td {...cell.getCellProps()} style={{
                                     padding: '10px',
                                     border: 'solid 1px gray',
                                     backgroundColor: '#e5e4e2',
+                                    textAlign: 'center',
                                 }}>{cell.render('Cell')}</td>;
                             })}
                         </tr>

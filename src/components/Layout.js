@@ -2,6 +2,7 @@ import Sidebar from "./Sidebar";
 import Table from './Table';
 import React from 'react';
 import './Table.css';
+import { BiEdit } from "react-icons/bi";
 
 function Layout(props) {
     const columns = React.useMemo(
@@ -23,12 +24,20 @@ function Layout(props) {
                 accessor: 'status',
             },
             {
+                Header: 'Updated Dt',
+                accessor: 'updateDt',
+            },
+            {
                 Header: 'Comments',
                 accessor: 'comments',
             },
             {
                 Header: 'Actions',
-                accessor: 'actions',
+                Cell: ({ row }) => (
+                    <div>
+                        <BiEdit size={25} onClick={() => handleEdit(row)}/>
+                    </div>
+                )
             },
         ],
         []
@@ -41,8 +50,8 @@ function Layout(props) {
                 iswebPageHelpful: 'Yes',
                 feedback: 'Good',
                 status: 'In Progress',
+                updateDt: '2022-02-21',
                 comments: 'test',
-                Actions: ''
 
             },
             {
@@ -50,6 +59,7 @@ function Layout(props) {
                 iswebPageHelpful: 'Yes',
                 feedback: 'Good',
                 status: 'In Progress',
+                updateDt: '2022-02-22',
                 comments: 'test',
                 Actions: ''
             },
@@ -58,6 +68,7 @@ function Layout(props) {
                 iswebPageHelpful: 'Yes',
                 feedback: 'Good',
                 status: 'In Progress',
+                updateDt: '2022-02-21',
                 comments: 'test',
                 Actions: ''
             },
@@ -66,6 +77,7 @@ function Layout(props) {
                 iswebPageHelpful: 'Yes',
                 feedback: 'Good',
                 status: 'In Progress',
+                updateDt: '2022-02-22',
                 comments: 'test',
                 Actions: ''
             },
@@ -74,12 +86,16 @@ function Layout(props) {
                 iswebPageHelpful: 'Yes',
                 feedback: 'Good',
                 status: 'In Progress',
+                updateDt: '2022-02-23',
                 comments: 'test',
                 Actions: ''
             },
         ],
         []
     );
+    const handleEdit = (row) => {
+        console.log('Editing row ${row.index}');
+    };
     return (
      <div id="wrapper">
           <Sidebar />

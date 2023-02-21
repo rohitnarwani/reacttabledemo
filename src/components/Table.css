@@ -3,7 +3,21 @@
     height: 100%;
     position: fixed;
     padding-left: 200px;
-    width:100%;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+tr {
+    border-top: 1px solid black;
+}
+
+    tr:first-child {
+        border-top: none;
+    }
+
+td {
+    border: none !important;
 }
 
 
