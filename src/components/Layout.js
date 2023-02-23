@@ -3,6 +3,7 @@ import Table from './Table';
 import React from 'react';
 import './Table.css';
 import { BiEdit } from "react-icons/bi";
+import Feedback from "./Feedback";
 
 function Layout(props) {
     const columns = React.useMemo(
@@ -17,7 +18,11 @@ function Layout(props) {
             },
             {
                 Header: 'Feedback',
-                accessor: 'feedback',
+                Cell: ({ row }) => (
+                    <div>
+                        <Feedback onClick={() => handleFeedBack(row)} />
+                    </div>
+                )
             },
             {
                 Header: 'Status',
@@ -95,6 +100,9 @@ function Layout(props) {
     );
     const handleEdit = (row) => {
         console.log('Editing row ${row.index}');
+    };
+    const handleFeedBack = (row) => {
+       
     };
     return (
      <div id="wrapper">
